@@ -20,6 +20,10 @@ The state space has 37 dimensions and contains the agent's velocity, along with 
 
 The task is episodic, and in order to solve the environment, your agent must get an average score of +13 over 100 consecutive episodes.
 
+### Solution
+
+Follow the instructions in `Navigation.ipynb` from this repository to see the solution by successfully training the agent! You can find saved model weights in 'model_weights.' Otherwise, follow instructions below and try it yourself!
+
 ## Dependencies
 
 To set up your python environment to run the code in this repository, follow the instructions below.
