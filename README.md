@@ -20,7 +20,7 @@ The state space has 37 dimensions and contains the agent's velocity, along with 
 
 The task is episodic, and in order to solve the environment, your agent must get an average score of +13 over 100 consecutive episodes.
 
--## Dependencies
+## Dependencies
 
 To set up your python environment to run the code in this repository, follow the instructions below.
 
