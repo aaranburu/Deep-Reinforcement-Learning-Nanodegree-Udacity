@@ -4,7 +4,7 @@
 
 # Project 1: Navigation
 
-### Introduction
+## Introduction
 
 For this project, you will train an agent to navigate (and collect bananas!) in a large, square world.  
 
@@ -20,7 +20,7 @@ The state space has 37 dimensions and contains the agent's velocity, along with 
 
 The task is episodic, and in order to solve the environment, your agent must get an average score of +13 over 100 consecutive episodes.
 
-### Solution
+## Solution
 
 Follow the instructions in `Navigation.ipynb` from this repository to see the solution by successfully training the agent! You can find saved model weights in 'model_weights.' Otherwise, follow instructions below and try it yourself!
 
@@ -59,7 +59,7 @@ python -m ipykernel install --user --name drlnd --display-name "drlnd"
 
 5. Before running code in a notebook, change the kernel to match the `drlnd` environment by using the drop-down `Kernel` menu. 
 
-### Getting Started
+## Getting Started
 
 1. Download the environment from one of the links below.  You need only select the environment that matches your operating system:
     - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Linux.zip)
@@ -77,7 +77,7 @@ python -m ipykernel install --user --name drlnd --display-name "drlnd"
 
 Follow the instructions in `Navigation.ipynb` to get started with training your own agent!  
 
-### (Optional) Challenge: Learning from Pixels
+## (Optional) Challenge: Learning from Pixels
 
 After you have successfully completed the project, if you're looking for an additional challenge, you have come to the right place!  In the project, your agent learned from information such as its velocity, along with ray-based perception of objects around its forward direction.  A more challenging task would be to learn directly from pixels!
 
