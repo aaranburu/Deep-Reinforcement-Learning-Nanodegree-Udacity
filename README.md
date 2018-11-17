@@ -40,7 +40,7 @@ Follow the instructions in `Navigation.ipynb` to get started with training your 
 
 ### Solution
 
-Try to train your own agent by yourself! You can always download the files in this repository and look at the solution. In addition, more details about the algorithm, implementation and hyperparameters tuning is provided in **Report.pdf**.
+Try to train your own agent by yourself! You can always download the files in this repository and look at the solution. In addition, more details about the algorithm, implementation and hyperparameters tuning is provided in **Report.md**.
 
 ### (Optional) Challenge: Learning from Pixels
 
