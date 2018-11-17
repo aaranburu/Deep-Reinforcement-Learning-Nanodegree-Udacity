@@ -71,7 +71,7 @@ Environment training finished after 1000 episodes!	Average Score: 16.25
 
 ![trained](./images/trained_agent.gif)
 
-## Ideas for future work
+## Future lines
 
 
 
