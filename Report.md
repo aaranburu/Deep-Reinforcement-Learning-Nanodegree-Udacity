@@ -17,6 +17,8 @@ Parameters used in DQN algorithm:
 
 ## Results
 
+### Training
+
 ![results](training.png)
 
 ```
@@ -47,11 +49,9 @@ Episode 1000	Average Score: 16.25
 Environment training finished after 1000 episodes!	Average Score: 16.25
 ```
 
-### Untrained agent
+### Untrained vs trained agent
 
 ![untrained](untrained_agent.gif)
-
-### Trained agent
 
 ![trained](trained_agent.gif)
 
