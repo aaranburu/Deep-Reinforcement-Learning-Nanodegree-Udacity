@@ -2,11 +2,18 @@
 
 ## Learning algorithm
 
-The implemented learning algorithm is based on the Deep Q Learning approach originally described in Google´s DeepMind [Nature publication : "Human-level control through deep reinforcement learning (2015)"](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf). As an input the vector of state is used instead of an image so convolutional neural nework is replaced with deep neural network. The deep neural network has following layers:
+The implemented learning algorithm is based on the Deep Q Learning approach originally described in Google´s DeepMind [Nature publication : "Human-level control through deep reinforcement learning (2015)"](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf). The steps of the algorithm can be found in the picture below:
+![Deep Q-Learning algorithm from Udacity course](./images/DQN.png)
 
-- Fully connected layer - input: 37 (state size) output: 128
-- Fully connected layer - input: 128 output 64
-- Fully connected layer - input: 64 output: (action size)
+This algorithm screenshot is taken from the [Deep Reinforcement Learning Nanodegree course](https://www.udacity.com/course/deep-reinforcement-learning-nanodegree--nd893)
+
+As an input, the vector of state obtained by the sensors of the agent is employed. Therefore, it is enough to build a Neural Network with just fully connected layers followed by Rectified Linear Units (ReLUs). If images are to be used as the state-space, then a Convolutional Neural Network (CNN) needs to be designed. The deep neural network is composed by the following layers and stages:
+
+- Fully connected layer - input: 37 (state size) | output: 64
+- ReLU activation layer
+- Fully connected layer - input: 64 |  output 64
+- ReLU activation layer
+- Fully connected layer - input: 64 | output: (action size)
 
 Parameters used in DQN algorithm:
 
