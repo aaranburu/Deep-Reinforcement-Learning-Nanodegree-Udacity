@@ -17,7 +17,7 @@ Parameters used in DQN algorithm:
 
 ## Results
 
-![results](training_plot.png)
+![results](training.png)
 
 ```
 Episode 100	Average Score: 0.84
@@ -26,7 +26,9 @@ Episode 300	Average Score: 7.14
 Episode 400	Average Score: 10.35
 Episode 500	Average Score: 12.18
 Episode 540	Average Score: 13.02
+
 Environment solved in 440 episodes!	Average Score: 13.02
+
 Episode 545	Average Score: 13.03
 Episode 546	Average Score: 13.02
 Episode 559	Average Score: 13.11
