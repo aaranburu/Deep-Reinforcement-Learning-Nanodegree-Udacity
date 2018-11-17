@@ -1,4 +1,4 @@
-# Project report
+# Report
 
 ## Learning algorithm
 
