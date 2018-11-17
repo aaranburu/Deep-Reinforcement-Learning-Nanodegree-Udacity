@@ -2,13 +2,15 @@
 
 ## Learning algorithm
 
-The implemented learning algorithm is based on the Deep Q Learning approach originally described in Google´s DeepMind [Nature publication : "Human-level control through deep reinforcement learning (2015)"](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf). The steps of the algorithm can be found in the picture below:
+The implemented learning algorithm is based on the Deep Q Learning approach originally described in Google´s DeepMind [Nature publication : "Human-level control through deep reinforcement learning (2015)"](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf). As an input, the vector of state with size 37 is obtained by the sensors of the agent is employed.
+
+There are two main improvements with respect to traditional Deep Q Learning algorithms as part of the solution. In first place, experience replay is used by means of a replay buffer to break correlations between consecutive sample sequences. This is carried out by sampling randomly from the replay buffer that contains samples history. Secondly, the so called Fixed Q-Targets concept is employed. In this case, this strategy aims to prevent correlations with the targe by updating network weights periodically. This helps the algorithm to have enough time to learn from the otherwise fastly changing network. The steps of the complete algorithm can be found in the picture below:
 
 ![Deep Q-Learning algorithm from Udacity course](./images/DQN.png)
 
 This algorithm screenshot is taken from the [Deep Reinforcement Learning Nanodegree course](https://www.udacity.com/course/deep-reinforcement-learning-nanodegree--nd893)
 
-As an input, the vector of state obtained by the sensors of the agent is employed. Therefore, it is enough to build a Neural Network with just fully connected layers followed by Rectified Linear Units (ReLUs). If images are to be used as the state-space, then a Convolutional Neural Network (CNN) needs to be designed. The deep neural network is composed by the following layers and stages:
+It is important to recall that the vector of state only has 37 dimensions. Therefore, it is enough to build a Neural Network with just fully connected layers followed by Rectified Linear Units (ReLUs). If images are to be used as the state-space, then a Convolutional Neural Network (CNN) needs to be designed. The deep neural network is composed by the following layers and stages:
 
 - Fully connected layer - input: 37 (state size) | output: 64
 - ReLU layer - activation function
