@@ -11,9 +11,9 @@ This algorithm screenshot is taken from the [Deep Reinforcement Learning Nanodeg
 As an input, the vector of state obtained by the sensors of the agent is employed. Therefore, it is enough to build a Neural Network with just fully connected layers followed by Rectified Linear Units (ReLUs). If images are to be used as the state-space, then a Convolutional Neural Network (CNN) needs to be designed. The deep neural network is composed by the following layers and stages:
 
 - Fully connected layer - input: 37 (state size) | output: 64
-- ReLU activation layer
+- ReLU layer - activation function
 - Fully connected layer - input: 64 |  output 64
-- ReLU activation layer
+- ReLU layer - activation function
 - Fully connected layer - input: 64 | output: (action size)
 
 Parameters used in DQN algorithm:
