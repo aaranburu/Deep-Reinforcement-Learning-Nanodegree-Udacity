@@ -38,6 +38,10 @@ The task is episodic, and in order to solve the environment, your agent must get
 
 Follow the instructions in `Navigation.ipynb` to get started with training your own agent!  
 
+### Solution
+
+Try to train your own agent by yourself! You can always download the files in this repository and look at the solution. In addition, more details about the algorithm, implementation and hyperparameters tuning is provided in **Report.pdf**.
+
 ### (Optional) Challenge: Learning from Pixels
 
 After you have successfully completed the project, if you're looking for an additional challenge, you have come to the right place!  In the project, your agent learned from information such as its velocity, along with ray-based perception of objects around its forward direction.  A more challenging task would be to learn directly from pixels!
