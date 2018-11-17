@@ -3,6 +3,7 @@
 ## Learning algorithm
 
 The implemented learning algorithm is based on the Deep Q Learning approach originally described in Google´s DeepMind [Nature publication : "Human-level control through deep reinforcement learning (2015)"](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf). The steps of the algorithm can be found in the picture below:
+
 ![Deep Q-Learning algorithm from Udacity course](./images/DQN.png)
 
 This algorithm screenshot is taken from the [Deep Reinforcement Learning Nanodegree course](https://www.udacity.com/course/deep-reinforcement-learning-nanodegree--nd893)
