@@ -35,7 +35,7 @@ Hyperparameters tuned and used in DQN algorithm:
 
 ### Training
 
-![results](training.png)
+![results](./images/training.png)
 
 ```
 Episode 100	Average Score: 0.84
@@ -67,9 +67,9 @@ Environment training finished after 1000 episodes!	Average Score: 16.25
 
 ### Untrained vs trained agent
 
-![untrained](untrained_agent.gif)
+![untrained](./images/untrained_agent.gif)
 
-![trained](trained_agent.gif)
+![trained](./images/trained_agent.gif)
 
 ## Ideas for future work
 
