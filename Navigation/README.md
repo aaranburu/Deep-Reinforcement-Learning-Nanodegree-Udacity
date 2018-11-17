@@ -4,6 +4,8 @@
 
 # Project 1: Navigation
 
+First project completed for the Deep Reinforcement Learning Nanodegree in Udacity. The task consists on learning an agent to navigate and collect as many yellow bananas and as few purple bananas as possible by training a Deep Q Network (DQN).
+
 ### Introduction
 
 For this project, you will train an agent to navigate (and collect bananas!) in a large, square world.  
