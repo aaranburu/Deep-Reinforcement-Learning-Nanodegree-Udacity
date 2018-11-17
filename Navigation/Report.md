@@ -18,12 +18,18 @@ It is important to recall that the vector of state only has 37 dimensions. There
 - ReLU layer - activation function
 - Fully connected layer - input: 64 | output: (action size)
 
-Parameters used in DQN algorithm:
+Hyperparameters tuned and used in DQN algorithm:
 
+- Number of training episodes: 1000
 - Maximum steps per episode: 1000
-- Starting epsilion: 1.0
-- Ending epsilion: 0.01
-- Epsilion decay rate: 0.999
+- Starting epsilon, where epsilon is used for epsilon-greedy policy: 1.0
+- Ending epsilon: 0.01
+- Epsilon decay rate: 0.999
+- Number of hidden layers and units per layer of neural network: [64, 64]
+- Replay buffer size: 10000
+- Batch size: 64
+- Gamma (discount factor): 0.99
+- Adam optimizer learning rate: 0.0005
 
 ## Results
 
@@ -67,9 +73,10 @@ Environment training finished after 1000 episodes!	Average Score: 16.25
 
 ## Ideas for future work
 
-1. Extensive hyperparameter optimization
-2. Double Deep Q Networks
-3. Prioritized Experience Replay
-4. Dueling Deep Q Networks
-5. RAINBOW Paper
-6. Learning from pixels
+
+
+1. Explore Double Deep Q Networks to avoid overestimation of Q-values in the early learning stages 
+3. Implement Prioritized Experience Replay by giving priority weights or probabilities (based on the TD error) to the samples stored in    the replay buffer. This helps to increase the selection frequency of relevant experiences or samples.
+4. Use Dueling Deep Q Networks to mantain two Deep Q networks. While one network estimates state values, the other predicts the state-      dependent action advantage function. The combination of both has been proven to improve vanilla algorithm significantly.
+5. Investigate on Google´s DeepMind RAINBOW Paper and try to replicate results.
+6. Learning from pixels. Although a CNN has been designed in order to adapt to the new state-space, GPU performance capacity would be      required to accomplish training.
