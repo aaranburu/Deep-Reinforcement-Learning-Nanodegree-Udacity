@@ -66,6 +66,10 @@ The environment is considered solved, when the average (over 100 episodes) of th
 
 Follow the instructions in `Continuous_Control.ipynb` to get started with training your own agent!  
 
+### Solution
+
+Try to train your own agent(s) by yourself! You can always download the files in this repository and look at the solution. In addition, more details about the algorithm, implementation and hyperparameters tuning is provided in **Report.md**.
+
 ### (Optional) Challenge: Crawler Environment
 
 After you have successfully completed the project, you might like to solve the more difficult **Crawler** environment.
