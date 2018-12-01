@@ -8,6 +8,7 @@ The implemented learning algorithm is based on the Actor-Critic method called De
 
 This algorithm screenshot is taken from the [Google DeepMind´s paper](https://arxiv.org/pdf/1509.02971.pdf)
 
+
 The [DDPG algorithm found on Udacity´s Deep RL repository](https://github.com/udacity/deep-reinforcement-learning/tree/master/ddpg-pendulum) and applied into the Pendulum Environment has been taken as a reference. Several improvements have been applied to the original algorithm. In first place, some of the hyperparameters of the Deep Neural Network of the actor and the critic have been modified. For example, batch normalization has been used between fully connected layers in order to speed up the training. It has been also noted that simpler hidden layers produce the same effect for this specific environment. The same structure has been defined for the actor and critic DNNs:
 
 - Fully connected layer - input: 33 (state size) | output: 128
