@@ -42,7 +42,7 @@ Episode 100	Average Score: 21.78
 Episode 123	Average Score: 30.17
 Environment solved in 123 episodes!	Average Score: 30.17
 
-
+Total score (averaged over agents) this episode: 37.8464991540648
 ```
 
 ## Future lines
