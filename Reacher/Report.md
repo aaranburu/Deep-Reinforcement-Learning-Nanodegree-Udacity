@@ -2,7 +2,7 @@
 
 ## Learning algorithm
 
-The implemented learning algorithm is based on the Actor-Critic method called Deep Deterministic Policy Gradient (DDPG) approach and originally described in Google´s DeepMind [Nature publication : "Continuous Control with Deep Reinforcement Learning (20156)"](https://arxiv.org/pdf/1509.02971.pdf). As an input, the vector of state with size 33 obtained by the sensors of each agent is employed. In total, 20 agents have been simultaneously trained in parallel to improve convergence, although the implementation works fine with a single agent as well. The steps of the complete algorithm can be found in the picture below:
+The implemented learning algorithm is based on the Actor-Critic method called Deep Deterministic Policy Gradient (DDPG) approach and originally described in Google´s DeepMind paper: ["Continuous Control with Deep Reinforcement Learning (20156)"](https://arxiv.org/pdf/1509.02971.pdf). As an input, the vector of state with size 33 obtained by the sensors of each agent is employed. In total, 20 agents have been simultaneously trained in parallel to improve convergence, although the implementation works fine with a single agent as well. The steps of the complete algorithm can be found in the picture below:
 
 ![Deep Deterministic Policy Gradient (DDPG) algorithm from Google DeepMind´s paper](./images/DDPG.png)
 
@@ -37,35 +37,15 @@ Other hyperparameters tuned and used in the DDPG algorithm:
 ![results](./images/training.png)
 
 ```
-Episode 100	Average Score: 0.84
-Episode 200	Average Score: 3.73
-Episode 300	Average Score: 7.14
-Episode 400	Average Score: 10.35
-Episode 500	Average Score: 12.18
-Episode 540	Average Score: 13.02
+Episode 100	Average Score: 21.78
+Episode 123	Average Score: 30.17
+Environment solved in 123 episodes!	Average Score: 30.17
 
-Environment solved in 440 episodes!	Average Score: 13.02
 
-Episode 545	Average Score: 13.03
-Episode 546	Average Score: 13.02
-Episode 559	Average Score: 13.11
-Episode 560	Average Score: 13.08
-...
-Episode 600	Average Score: 13.23
-...
-Episode 700	Average Score: 14.78
-...
-Episode 800	Average Score: 15.28
-...
-Episode 900	Average Score: 15.94
-...
-Episode 1000	Average Score: 16.25
-
-Environment training finished after 1000 episodes!	Average Score: 16.25
 ```
 
 ## Future lines
 
 1. Further fine tuning of hyperparameters for faster training
-2. Implement the D4PG algorithm from Google [DeepMind´s paper](https://openreview.net/pdf?id=SyZipzbCb).
-3. Try to get similar performance results with TRPO, PPO and REINFORCE.
+2. Implement the D4PG algorithm from the other Google [DeepMind´s paper](https://openreview.net/pdf?id=SyZipzbCb).
+3. Try to get similar performance results with TRPO (Trust Region Policy Optimization), PPO (Proximal Policy Optimization) and REINFORCE.
