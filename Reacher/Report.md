@@ -2,38 +2,37 @@
 
 ## Learning algorithm
 
-The implemented learning algorithm is based on the Deep Q Learning approach originally described in Google´s DeepMind [Nature publication : "Human-level control through deep reinforcement learning (2015)"](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf). As an input, the vector of state with size 37 is obtained by the sensors of the agent is employed.
+The implemented learning algorithm is based on the Actor-Critic method called Deep Deterministic Policy Gradient (DDPG) approach and originally described in Google´s DeepMind [Nature publication : "Continuous Control with Deep Reinforcement Learning (20156)"](https://arxiv.org/pdf/1509.02971.pdf). As an input, the vector of state with size 33 obtained by the sensors of each agent is employed. In total, 20 agents have been simultaneously trained in parallel to improve convergence, although the implementation works fine with a single agent as well. The steps of the complete algorithm can be found in the picture below:
 
-There are two main improvements with respect to traditional Deep Q Learning algorithms as part of the solution. In first place, experience replay is used by means of a replay buffer to break correlations between consecutive sample sequences. This is carried out by sampling randomly from the replay buffer that contains samples history. Secondly, the so called Fixed Q-Targets concept is employed. In this case, this strategy aims to prevent correlations with the targe by updating network weights periodically. This helps the algorithm to have enough time to learn from the otherwise fastly changing network. The steps of the complete algorithm can be found in the picture below:
+![Deep Deterministic Policy Gradient (DDPG) algorithm from Google DeepMind´s paper](./images/DDPG.png)
 
-![Deep Q-Learning algorithm from Udacity course](./images/DQN.png)
+This algorithm screenshot is taken from the [Google DeepMind´s paper](https://arxiv.org/pdf/1509.02971.pdf)
 
-This algorithm screenshot is taken from the [Deep Reinforcement Learning Nanodegree course](https://www.udacity.com/course/deep-reinforcement-learning-nanodegree--nd893)
+The [DDPG algorithm found on Udacity´s Deep RL repository](https://github.com/udacity/deep-reinforcement-learning/tree/master/ddpg-pendulum) and applied into the Pendulum Environment has been taken as a reference. Several improvements have been applied to the original algorithm. In first place, some of the hyperparameters of the Deep Neural Network of the actor and the critic have been modified. For example, batch normalization has been used between fully connected layers in order to speed up the training. It has been also noted that simpler hidden layers produce the same effect for this specific environment. The same structure has been defined for the actor and critic DNNs:
 
-It is important to recall that the vector of state only has 37 dimensions. Therefore, it is enough to build a Neural Network with just fully connected layers followed by Rectified Linear Units (ReLUs). If images are to be used as the state-space, then a Convolutional Neural Network (CNN) needs to be designed. The deep neural network is composed by the following layers and stages:
-
-- Fully connected layer - input: 37 (state size) | output: 64
+- Fully connected layer - input: 33 (state size) | output: 128
 - ReLU layer - activation function
-- Fully connected layer - input: 64 |  output 64
+- Batch normalization
+- Fully connected layer - input: 128 |  output 128
 - ReLU layer - activation function
-- Fully connected layer - input: 64 | output: (action size)
+- Fully connected layer - input: 128 | output: (action size)
+- Output activation layer - tanh function
 
-Hyperparameters tuned and used in DQN algorithm:
+At initialization, random weights of the source network have been copied to the target network. Furthermore, the learning rate for both optimizers has been set to be the same, namely 2e-4. As proposed in the benchmark implementation, gradient in the critic network has been clipped too. Apart from that, making the agent more greedy by reducing sigma value to 0.01 in the Ornstein-Uhlenbeck noise process also resulted in a faster convergence. Finally, the algorithm has been adapted to support simultaneous training of 20 agents by adding 20 experiences to the replay buffer every time step and just updating the network sampling only 10 experiences from the buffer every 20 time steps. As a result of this enhancements, training time and convergence has been significantly reduced.
+
+Other hyperparameters tuned and used in the DDPG algorithm:
 
 - Number of training episodes: 1000
-- Maximum steps per episode: 1000
-- Starting epsilon, where epsilon is used for epsilon-greedy policy: 1.0
-- Ending epsilon: 0.01
-- Epsilon decay rate: 0.999
-- Number of hidden layers and units per layer of neural network: [64, 64]
+- Maximum steps per episode: 10000
+- Number of hidden layers and units per layer of neural network: [128, 128]
 - Replay buffer size: 10000
-- Batch size: 64
+- Batch size: 128
 - Gamma (discount factor): 0.99
-- Adam optimizer learning rate: 0.0005
+- Adam optimizer learning rate for actor and critic: 2e-4
+- Tau: 1e-3
+- Weight decay: 0
 
-## Results
-
-### Training
+## Training and Results
 
 ![results](./images/training.png)
 
@@ -65,18 +64,8 @@ Episode 1000	Average Score: 16.25
 Environment training finished after 1000 episodes!	Average Score: 16.25
 ```
 
-### Untrained vs trained agent
-
-![untrained](./images/untrained_agent.gif)
-
-![trained](./images/trained_agent.gif)
-
 ## Future lines
 
-
-
-1. Explore Double Deep Q Networks to avoid overestimation of Q-values in the early learning stages 
-3. Implement Prioritized Experience Replay by giving priority weights or probabilities (based on the TD error) to the samples stored in    the replay buffer. This helps to increase the selection frequency of relevant experiences or samples.
-4. Use Dueling Deep Q Networks to mantain two Deep Q networks. While one network estimates state values, the other predicts the state-      dependent action advantage function. The combination of both has been proven to improve vanilla algorithm significantly.
-5. Investigate on Google´s DeepMind RAINBOW Paper and try to replicate results.
-6. Learning from pixels. Although a CNN has been designed in order to adapt to the new state-space, GPU performance capacity would be      required to accomplish training.
+1. Further fine tuning of hyperparameters for faster training
+2. Implement the D4PG algorithm from Google [DeepMind´s paper](https://openreview.net/pdf?id=SyZipzbCb).
+3. Try to get similar performance results with TRPO, PPO and REINFORCE.
