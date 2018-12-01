@@ -4,7 +4,7 @@
 
 The implemented learning algorithm is based on the Actor-Critic method called Deep Deterministic Policy Gradient (DDPG) approach and originally described in Google´s DeepMind paper: ["Continuous Control with Deep Reinforcement Learning (20156)"](https://arxiv.org/pdf/1509.02971.pdf). As an input, the vector of state with size 33 obtained by the sensors of each agent is employed. In total, 20 agents have been simultaneously trained in parallel to improve convergence, although the implementation works fine with a single agent as well. The steps of the complete algorithm can be found in the picture below:
 
-![Deep Deterministic Policy Gradient (DDPG) algorithm](./images/DDPG.png)
+![Deep Deterministic Policy Gradient (DDPG) algorithm](./images/DDPG.PNG)
 
 This algorithm screenshot is taken from the [Google DeepMind´s paper](https://arxiv.org/pdf/1509.02971.pdf)
 
@@ -34,7 +34,7 @@ Other hyperparameters tuned and used in the DDPG algorithm:
 
 ## Training and Results
 
-![results](./images/training.png)
+![results](./images/training.PNG)
 
 ```
 Episode 100	Average Score: 21.78
