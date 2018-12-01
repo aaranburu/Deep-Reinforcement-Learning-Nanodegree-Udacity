@@ -48,5 +48,5 @@ Environment solved in 123 episodes!	Average Score: 30.17
 ## Future lines
 
 1. Further fine tuning of hyperparameters for faster training
-2. Implement the D4PG algorithm from the other Google [DeepMind´s paper](https://openreview.net/pdf?id=SyZipzbCb).
+2. Implement the D4PG algorithm from the other [Google DeepMind´s paper](https://openreview.net/pdf?id=SyZipzbCb).
 3. Try to get similar performance results with TRPO (Trust Region Policy Optimization), PPO (Proximal Policy Optimization) and REINFORCE.
