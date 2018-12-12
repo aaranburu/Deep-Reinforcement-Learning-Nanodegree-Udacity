@@ -39,7 +39,11 @@ The environment is considered solved, when the average (over 100 episodes) of th
 
 ### Instructions
 
-Follow the instructions in `Tennis.ipynb` to get started with training your own agent!  
+Follow the instructions in `myTennis.ipynb` to get started with training your own agent!  
+
+### Solution
+
+Try to train your own agents by yourself! You can always download the files in this repository and look at the solution. In addition, more details about the algorithm, implementation and hyperparameters tuning is provided in **Report.md**.
 
 ### (Optional) Challenge: Crawler Environment
 
