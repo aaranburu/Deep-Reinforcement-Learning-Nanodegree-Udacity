@@ -2,14 +2,14 @@
 
 ## Learning algorithm
 
-The implemented learning algorithm is based on the Actor-Critic method called Deep Deterministic Policy Gradient (DDPG) approach, which is originally described in Google´s DeepMind paper ["Continuous Control with Deep Reinforcement Learning (2016)"](https://arxiv.org/pdf/1509.02971.pdf) and is adapted for a multi agent collaboration scenario following OpenAI´s paper ["Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments"](https://arxiv.org/abs/1706.02275). The input to the algorithm is a vector of state with size 24 obtained by the sensors of each agent. In total, two agents have been simultaneously trained in parallel to collaborate and help each other in the learning process, although it has been proved that the implementation works fine by training the agents without sharing any information as well. The steps of the complete algorithm can be found in the picture below:
+The implemented learning algorithm is based on the Actor-Critic method called Deep Deterministic Policy Gradient (DDPG) approach, which is originally described in Google's DeepMind paper ["Continuous Control with Deep Reinforcement Learning (2016)"](https://arxiv.org/pdf/1509.02971.pdf) and is adapted for a multi agent collaboration scenario following OpenAI's paper ["Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments"](https://arxiv.org/abs/1706.02275). The input to the algorithm is a vector of state with size 24 obtained by the sensors of each agent. In total, two agents have been simultaneously trained in parallel to collaborate and help each other in the learning process, although it has been proved that the implementation works fine by training the agents without sharing any information as well. The steps of the complete algorithm can be found in the picture below:
 
 ![Multiple Agent Deep Deterministic Policy Gradient (DDPG) algorithm](./images/MADDPG.png)
 
-This algorithm screenshot is taken from the [OpenAI´s paper](https://arxiv.org/pdf/1706.02275.pdf)
+This algorithm screenshot is taken from the [OpenAI's paper](https://arxiv.org/pdf/1706.02275.pdf)
 
 
-As described in the literature, a shared replay buffer has been created where agents can save and sample experiences. Moreover, several modifications have been applied to the original algorithm in order to adapt the method to the actual problem. In first place, some of the hyperparameters of the Deep Neural Network of the actor and the critic have been modified. For example, batch normalization has been used between fully connected layers in order to speed up the training. What is more, each actor only uses its own information to predict actions, whereas each critic also knows the other agent´s (states, actions) pairs for predicting Q values. Apart from the replay buffer, that is how information is shared to promote collaboration. Other than that, a similar structure has been defined for the actor and critic DNNs:
+As described in the literature, a shared replay buffer has been created where agents can save and sample experiences. Moreover, several modifications have been applied to the original algorithm in order to adapt the method to the actual problem. In first place, some of the hyperparameters of the Deep Neural Network of the actor and the critic have been modified. For example, batch normalization has been used between fully connected layers in order to speed up the training. What is more, each actor only uses its own information to predict actions, whereas each critic also knows the other agent's (states, actions) pairs for predicting Q values. Apart from the replay buffer, that is how information is shared to promote collaboration. Other than that, a similar structure has been defined for the actor and critic DNNs:
 
 #### Actors DNN Architecture
 - Fully connected layer - input: 24 (state size) | output: 128
@@ -73,5 +73,5 @@ Average score of 0.75 or more achieved in 793 episodes!	Average Score: 0.76
 
 1. Further fine tuning of hyperparameters for faster training
 2. Design a prioritized replay buffer in order to sample most relevant experiences
-2. Implement the D4PG algorithm for collaborative multiple agents from the other [Google DeepMind´s paper](https://openreview.net/pdf?id=SyZipzbCb).
+2. Implement the D4PG algorithm for collaborative multiple agents from the other [Google DeepMind's paper](https://openreview.net/pdf?id=SyZipzbCb).
 3. Try to get similar performance results with TRPO (Trust Region Policy Optimization), PPO (Proximal Policy Optimization) and REINFORCE, adapted for multiple agents collaboration.
