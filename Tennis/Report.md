@@ -4,7 +4,7 @@
 
 The implemented learning algorithm is based on the Actor-Critic method called Deep Deterministic Policy Gradient (DDPG) approach, which is originally described in Google´s DeepMind paper ["Continuous Control with Deep Reinforcement Learning (2016)"](https://arxiv.org/pdf/1509.02971.pdf) and is adapted for a multi agent collaboration scenario following OpenAI´s paper ["Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments"](https://arxiv.org/abs/1706.02275). The input to the algorithm is a vector of state with size 24 obtained by the sensors of each agent. In total, two agents have been simultaneously trained in parallel to collaborate and help each other in the learning process, although it has been proved that the implementation works fine by training the agents without sharing any information as well. The steps of the complete algorithm can be found in the picture below:
 
-![Multiple Agent Deep Deterministic Policy Gradient (DDPG) algorithm](./images/MADDPG.PNG)
+![Multiple Agent Deep Deterministic Policy Gradient (DDPG) algorithm](./images/MADDPG.png)
 
 This algorithm screenshot is taken from the [OpenAI´s paper](https://arxiv.org/pdf/1706.02275.pdf)
 
@@ -29,7 +29,7 @@ As described in the literature, a shared replay buffer has been created where ag
 - Fully connected layer - input: 128 | output: 1
 - Output activation layer - tanh function
 
-At initialization, random weights of the source network have been copied to the target network. Furthermore, the learning rate for both optimizers has been set to be the same, namely 2e-4. Gradient in the critic network has also been clipped to control regularization and avoid overtraining. Apart from that, making the agent explore only at the beginning of the training () by adding Ornstein-Uhlenbeck noise resulted in a faster convergence. Finally, the algorithm has been adapted to support simultaneous training of 2 agents by adding 1 experience per agent to the replay buffer every time step and updating the network sampling 4 experiences from the buffer every time step. As a result of this enhancements, convergence has been considerably shortened.
+At initialization, random weights of the source network have been copied to the target network. Furthermore, the learning rate for both optimizers has been set to be the same, namely 2e-4. Gradient in the critic network has also been clipped to control regularization and avoid overtraining. Apart from that, making the agent explore only at the beginning of the training (until an average reward over last 100 episodes greater than 0.025 is achieved) by adding Ornstein-Uhlenbeck noise resulted in a faster convergence. Finally, the algorithm has been adapted to support simultaneous training of 2 agents by adding 1 experience per agent to the replay buffer every time step and updating the network sampling 4 experiences from the buffer every time step. As a result of this enhancements, convergence has been considerably shortened.
 
 Other hyperparameters tuned and used in the DDPG algorithm:
 
@@ -47,7 +47,7 @@ Other hyperparameters tuned and used in the DDPG algorithm:
 
 Looking at the training process, it can be clearly seen that it takes about 250 episodes to stop using a random policy and really start learning. This is because it takes some time to the agents to start hitting the ball and gathering meaningful experiences. After that, noise is not added anymore and the agent greedily and quickly learns to get and average score of more than 0.75 in less than 800 episodes. The whole process takes roughly 2 hours, which is considered to be short given that no GPU has been used during training.
 
-![results](./images/training.PNG)
+![results](./images/training.png)
 
 ```
 2018-12-11 12:21:59: start!
