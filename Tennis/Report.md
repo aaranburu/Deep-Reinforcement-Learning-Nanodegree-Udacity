@@ -11,7 +11,7 @@ This algorithm screenshot is taken from the [OpenAI´s paper](https://arxiv.org/
 
 As described in the literature, a shared replay buffer has been created where agents can save and sample experiences. Moreover, several modifications have been applied to the original algorithm in order to adapt the method to the actual problem. In first place, some of the hyperparameters of the Deep Neural Network of the actor and the critic have been modified. For example, batch normalization has been used between fully connected layers in order to speed up the training. What is more, each actor only uses its own information to predict actions, whereas each critic also knows the other agent´s (states, actions) pairs for predicting Q values. Apart from the replay buffer, that is how information is shared to promote collaboration. Other than that, a similar structure has been defined for the actor and critic DNNs:
 
-### Actors DNN Architecture
+#### Actors DNN Architecture
 - Fully connected layer - input: 24 (state size) | output: 128
 - ReLU layer - activation function
 - Batch normalization
@@ -20,7 +20,7 @@ As described in the literature, a shared replay buffer has been created where ag
 - Fully connected layer - input: 128 | output: (action size)
 - Output activation layer - tanh function
 
-### Critics DNN Architecture
+#### Critics DNN Architecture
 - Fully connected layer - input: 24 (state size) * 2 (number of agents) = 48 | output: 128 * 2 (number of agents) = 256
 - ReLU layer - activation function
 - Batch normalization
