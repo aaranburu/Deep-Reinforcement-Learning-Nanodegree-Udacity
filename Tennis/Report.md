@@ -29,6 +29,7 @@ As described in the literature, a shared replay buffer has been created where ag
 - Fully connected layer - input: 128 | output: 1
 - Output activation layer - tanh function
 
+
 At initialization, random weights of the source network have been copied to the target network. Furthermore, the learning rate for both optimizers has been set to be the same, namely 2e-4. Gradient in the critic network has also been clipped to control regularization and avoid overtraining. Apart from that, making the agent explore only at the beginning of the training (until an average reward over last 100 episodes greater than 0.025 is achieved) by adding Ornstein-Uhlenbeck noise resulted in a faster convergence. Finally, the algorithm has been adapted to support simultaneous training of 2 agents by adding 1 experience per agent to the replay buffer every time step and updating the network by sampling 4 experiences from the buffer every time step. As a result of this enhancements, convergence has been considerably shortened.
 
 Other hyperparameters tuned and used in the MADDPG algorithm:
